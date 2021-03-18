@@ -1,4 +1,4 @@
 # Slash-Bot
 Based on the wokcommands module: https://www.npmjs.com/package/wokcommands
 
-It supports slash commands aswell!
+As the name suggests, it supports slash commands!
