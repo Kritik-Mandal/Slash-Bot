@@ -34,6 +34,7 @@ wok.on('commandException', (command, message, error) => {
   message.channel.send(`An exception occured when using command "${command.names[0]}"! The error is: ${error}`)
   console.error(error)
 })
+// this part is used for deleting slash commands 
 // for (const { id } of commands) {
 //   await SlashCommands.delete(id, guildId)
 //     .then(console.log)
