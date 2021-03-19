@@ -15,7 +15,7 @@ module.exports = {
         const user = message.author;
         const avatarEmbed = new MessageEmbed()
             .setColor(0x333333)
-            .setTitle(user.username)
+            .setTitle(user.tag)
             .setDescription('[[.PNG]('+`${user.displayAvatarURL({format: 'png', size: 2048})}`+') | [.JPEG]('+`${user.displayAvatarURL({format: 'jpeg', size: 2048})}`+') | [.WEBP]('+`${user.displayAvatarURL({format: 'webp', size: 2048})}`+')]')
             .setImage(user.displayAvatarURL({dynamic: true, size: 4096}));
         return message.channel.send(avatarEmbed); }
@@ -24,7 +24,7 @@ module.exports = {
         if (!User) { User = client.users.cache.get(id[1]) || message.author } 
         const avatarEmbed = new MessageEmbed()
             .setColor(0x333333)
-            .setTitle(User.username)
+            .setTitle(User.tag)
             .setDescription('[[.PNG]('+`${User.displayAvatarURL({format: 'png', size: 2048})}`+') | [.JPEG]('+`${User.displayAvatarURL({format: 'jpeg', size: 2048})}`+') | [.WEBP]('+`${User.displayAvatarURL({format: 'webp', size: 2048})}`+')]')
             .setImage(User.displayAvatarURL({dynamic: true, size: 4096}));
         return message.channel.send(avatarEmbed);
@@ -36,7 +36,7 @@ module.exports = {
         const user = User || interaction.member.user;
         const avatarEmbed = new MessageEmbed()
             .setColor(0x333333)
-            .setTitle(user.username)
+            .setTitle(user.tag)
             .setDescription('[[.PNG]('+`${user.displayAvatarURL({format: 'png', size: 2048})}`+') | [.JPEG]('+`${user.displayAvatarURL({format: 'jpeg', size: 2048})}`+') | [.WEBP]('+`${user.displayAvatarURL({format: 'webp', size: 2048})}`+')]')
             .setImage(user.displayAvatarURL({dynamic: true, size: 4096}));
         return avatarEmbed }
@@ -44,7 +44,7 @@ module.exports = {
             const user = client.users.cache.get(interaction.member.user.id);
         const avatarEmbed = new MessageEmbed()
             .setColor(0x333333)
-            .setTitle(user.username)
+            .setTitle(user.tag)
             .setDescription('[[.PNG]('+`${user.displayAvatarURL({format: 'png', size: 2048})}`+') | [.JPEG]('+`${user.displayAvatarURL({format: 'jpeg', size: 2048})}`+') | [.WEBP]('+`${user.displayAvatarURL({format: 'webp', size: 2048})}`+')]')
             .setImage(user.displayAvatarURL({dynamic: true, size: 4096}));
         return avatarEmbed
