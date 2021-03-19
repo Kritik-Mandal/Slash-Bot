@@ -7,7 +7,7 @@ module.exports = {
   testOnly: true,
   description: 'A simple ping pong command!!!',
   category: 'Miscellaneous',
-  callback: ({ message, client }) => {
+  callback: ({ message, client, interaction }) => {
     const embed = new MessageEmbed().setTitle(':ping_pong: Pong Counters!').setColor(3553598).addFields({
       name: '**API Latency**',
       value: '```'+`${Math.round(client.ws.ping)} ms`+'```',
@@ -26,7 +26,6 @@ module.exports = {
       })	
       message.channel.send(embed)
     } }
-
     return embed
   },
 }

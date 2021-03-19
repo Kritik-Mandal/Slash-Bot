@@ -1,7 +1,7 @@
 const DiscordJS = require('discord.js')
 const WOKCommands = require('wokcommands')
 require('dotenv').config()
-const guildId = '748045798511607839'
+const guildId = '604466665320873995'
 const client = new DiscordJS.Client()
 
 client.on('ready', async () => {
