@@ -11,6 +11,7 @@ client.on('ready', async () => {
     commandsDir: 'commands',
     testServers: [guildId],
   })
+  .setMongoPath(process.env.DBPATH)
   .setBotOwner([process.env.OWNER])
   .setDefaultPrefix(process.env.PREFIX)
   .setColor(3553598)
@@ -24,12 +25,20 @@ client.on('ready', async () => {
       emoji: '♾️'
     },
     {
+      name: 'Roleplay',
+      emoji: '🫂'
+    },
+    {
+      name: 'Automation',
+      emoji: '🚀'
+    },
+    {
       name: 'Utility',
       emoji: '🏗️'
     }])
   const SlashCommands = wok.slashCommands
   let commands = await SlashCommands.get(guildId)
-console.log(commands.map(c => c.name))
+console.log(`WOKCommands > Loaded ${commands.length} slash commands.`)
 wok.on('commandException', (command, message, error) => {
   message.channel.send(`An exception occured when using command "${command.names[0]}"! The error is: ${error}`)
   console.error(error)
