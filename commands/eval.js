@@ -9,10 +9,11 @@ module.exports = {
   category: 'Developer',
   expectedArgs: '<string>',
   callback: ({ message, args, prefix, client }) => {
-    if (message) { if (!message.author.bot) {
-        const result = eval(message.content.slice(prefix.length + 4))
+    if (message && !message.author.bot) {
+      console.log(args.join(' '))
+        const result = eval(args.join(' '))
       message.channel.send(result)
-    } }
+    }
     const result = eval(args.join(' '))
     return result
   },
