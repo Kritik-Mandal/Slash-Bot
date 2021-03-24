@@ -4,7 +4,7 @@ module.exports = {
   slash: "both",
   aliases: ['murder'],
   minArgs: 1,
-  maxArgs: 2,
+  maxArgs: -1,
   expectedArgs: '<User> [Comment]',
   guildOnly: true,
   testOnly: true,
@@ -18,7 +18,8 @@ module.exports = {
     const gif = ["https://media1.tenor.com/images/29cef0ac69c787ed0243cfeebbd030f1/tenor.gif?itemid=19477491", "https://media1.tenor.com/images/eb7fc71c616347e556ab2b4c813700d1/tenor.gif?itemid=5840101", "https://media.discordapp.net/attachments/713914988602982422/713935665104158810/YIy0BmMjANn.gif"]  
     args.shift()
     let cmt = `\"${args.join(" ")}\"`
-    if (!args) { cmt = "" }
+    if (!args.length) { cmt = "" }
+    console.log(`${cmt} \n ${args[0]} \n ${args[1]}`)
     const embed = new MessageEmbed()
     .setTitle(`${User.username} is getting killed by ${message.author.username}`)
     .setDescription(cmt)
